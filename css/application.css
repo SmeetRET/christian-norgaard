@@ -1,3 +1,224 @@
 @import "tailwindcss";
+@import "./custom.css";
 
-/* Dawn variable overrides and custom styles go below */
+@theme {
+  /* Fonts */
+  --font-lato: "Lato", sans-serif;
+  --font-roc-grotesk: "roc-grotesk", sans-serif;
+  --font-global: "roc-grotesk", sans-serif;
+
+  /* Colors */
+  --color-orange: #e18131;
+  --color-section-light: #f4f4f4;
+  --color-tile-bg: #f0f0f0;
+  --color-gray-100: #f0f0f0;
+  --color-gray-600: #5f5f5f;
+
+  --text-32: 32px;
+  --text-96: 96px;
+  --text-35: 35px;
+
+  /* Widths */
+  --width-160: 160px;
+  --width-360: 360px;
+  --width-590: 590px;
+  --width-800: 800px;
+  --width-1100: 1100px;
+  --width-1400: 1400px;
+
+  --breakpoint-1600: 1600px;
+  --breakpoint-1439: 1439px;
+  --breakpoint-1490: 1490px;
+  --breakpoint-1199: 1199px;
+  --breakpoint-1024: 1024px;
+  --breakpoint-989: 989px;
+  --breakpoint-769: 769px;
+  --breakpoint-768: 768px;
+  --breakpoint-767: 767px;
+  --breakpoint-425: 425px;
+  --breakpoint-375: 375px;
+
+  /* Borders */
+  --border-6: 6px;
+  --border-10: 10px;
+
+  /* Shadows */
+  --shadow-card: 0px 4px 20px 0px rgba(0, 0, 0, 0.35);
+
+  /* Aspect ratios */
+  --aspect-portrait: 2 / 3;
+
+  --tracking: 0.1em;
+
+  /* Signature font */
+  --font-signature:
+    "Snell Roundhand", "Segoe Script", "Brush Script MT", cursive;
+
+  /* Additional font sizes */
+  --text-14: 14px;
+  --text-20: 20px;
+  --text-22: 22px;
+  --text-24: 24px;
+  --text-30: 30px;
+  --text-40: 40px;
+  --text-48: 48px;
+  --text-64: 64px;
+}
+
+@layer base {
+  ::before,
+  ::after {
+    @apply box-border;
+  }
+  html,
+  body {
+    @apply scroll-smooth!;
+  }
+  body {
+    @apply font-global font-normal 2xl:text-32 2xl:leading-10 lg:text-2xl lg:leading-8 md:text-xl md:leading-7 text-lg leading-6 bg-white tracking-normal antialiased;
+  }
+  a {
+    @apply transition-all duration-300 ease-in-out cursor-pointer tracking-normal;
+  }
+  p {
+    @apply font-global font-normal 2xl:text-32 2xl:leading-10 lg:text-2xl lg:leading-8 md:text-xl md:leading-7 text-lg leading-6;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply m-0 outline-0 font-global font-medium;
+  }
+  h1,
+  .h1 {
+    @apply text-4xl leading-12 md:text-40 md:leading-13 xl:text-6xl xl:leading-[80px] 2xl:text-96 2xl:leading-[138px];
+  }
+  h2,
+  .h2,
+  .h2 span {
+    @apply text-4xl leading-12 md:text-40 md:leading-13 xl:text-[52px] xl:leading-[62px] 2xl:text-96 2xl:leading-[138px];
+  }
+  h3,
+  .h3 {
+    @apply text-xl leading-7 md:text-2xl md:leading-8 xl:text-3xl xl:leading-10 2xl:text-32 2xl:leading-[46px];
+  }
+  h4,
+  .h4 {
+    @apply text-xl leading-7 md:text-2xl md:leading-8 xl:text-3xl xl:leading-[43px];
+  }
+  h5,
+  .h5 {
+    @apply text-lg leading-6 md:text-xl md:leading-7 xl:text-2xl xl:leading-10;
+  }
+  h6,
+  .h6 {
+    @apply text-lg leading-6 xl:text-xl xl:leading-[29px];
+  }
+  img {
+    @apply overflow-hidden select-none;
+  }
+  .img-fluid-cover {
+    @apply w-full h-full object-cover;
+  }
+  .img-fluid-none {
+    @apply w-full h-full object-none;
+  }
+  .overflow-hidden {
+    @apply overflow-hidden;
+  }
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    @apply content-[none]!;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    @apply z-2!;
+  }
+  .custom-transition {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  .parent-link-wrapper {
+    @apply after:absolute after:top-0 after:left-0 after:w-full after:h-full after:block;
+  }
+  .quote-caption {
+    @apply font-global 2xl:text-40 2xl:leading-[58px] lg:text-3xl lg:leading-10 md:text-2xl md:leading-8 text-lg leading-6 text-black;
+  }
+  .quote-caption span {
+    @apply text-orange;
+  }
+  .skip-ink-none {
+    text-decoration-skip-ink: none;
+  }
+  .skip-ink-auto {
+    text-decoration-skip-ink: auto;
+  }
+  .content.lg p {
+    @apply 2xl:text-32 2xl:leading-10 lg:text-[22px] lg:leading-7.5 md:text-xl md:leading-7 text-lg leading-6;
+  }
+  .content.medium p {
+    @apply 2xl:text-24 2xl:leading-7.5 lg:text-xl lg:leading-6.5 md:text-lg md:leading-6 text-base leading-6;
+  }
+  .content-gray p {
+    @apply text-black/50 font-normal;
+  }
+  .content-dark-gray p {
+    @apply text-gray-600 font-normal;
+  }
+  .content-light p {
+    @apply font-light;
+  }
+  .title-black h1,
+  .title-black h2,
+  .title-black h3 {
+    @apply text-black;
+  }
+  .title-black h2 span,
+  .title-white h2 span {
+    @apply text-orange;
+  }
+  .title-white h1,
+  .title-white h2,
+  .title-white h3 {
+    @apply text-white;
+  }
+  .content-black p {
+    @apply text-black;
+  }
+  .content-white p {
+    @apply text-white;
+  }
+}
+@layer components {
+  .button,
+  .ctm-button,
+  .btn-orange {
+    @apply relative font-global font-medium text-orange 2xl:text-32 text-2xl leading-10 antialiased transition-all duration-300 flex flex-wrap gap-2 items-center;
+  }
+
+  .btn-orange svg,
+  .ctm-button .ctm-cta-arrow svg {
+    @apply rotate-0 transition-all duration-300 max-2xl:w-[22px] max-2xl:h-[22px];
+  }
+
+  .btn-orange:hover svg,
+  .ctm-button:hover .ctm-cta-arrow svg {
+    @apply rotate-45;
+  }
+
+  .button-card {
+    @apply relative font-global font-medium text-orange 1600:text-[28px] 1600:leading-9 767:text-[22px] 767:leading-7.5 text-lg leading-6 antialiased transition-all duration-300 flex flex-wrap gap-2 items-center;
+  }
+
+  .button-card.btn-orange svg {
+    @apply rotate-0 transition-all duration-300 shrink-0
+            1600:w-[18px] 1600:h-[18px]
+            767:w-[12px] 767:h-[12px]
+            w-[10px] h-[10px];
+  }
+
+  .button-card.btn-orange:hover svg {
+    @apply rotate-45;
+  }
+}

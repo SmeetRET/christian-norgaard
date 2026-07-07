@@ -1,0 +1,165 @@
+{% style %}
+  .section-id-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+
+    @media screen and (max-width: 1490px) {
+      .section-id-{{ section.id }} {
+        padding-top: {{ section.settings.padding_top_mobile }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+      }
+    }
+{% endstyle %}
+
+<section class="hero-banner-section color-{{ section.settings.color_scheme }} general-padding section-id-{{ section.id }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="hero-banner__inner relative z-1 2xl:max-w-[1470px] max-w-[1000px] px-[33px] mx-auto pb-[61px] max-1490:pb-10">
+    <div class="content flex">
+      <p class="font-lato 1490:text-32 1439:leading-[38px] lg:text-xl lg:leading-7 sm:text-lg sm:leading-6 text-sm leading-[17px] text-black tracking-[0.1em]">
+        {{ section.settings.eyebrow_text }}
+      </p>
+    </div>
+
+    <div class="title-white 2xl:pt-7 pt-3.5 {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      {%- if section.settings.heading_svg != blank -%}
+        <img
+          src="{{ section.settings.heading_svg | image_url }}"
+          alt="{{ section.settings.heading_svg.alt | default: 'Christian Nørgaard' | escape }}"
+          loading="eager"
+          width="auto"
+          height="auto"
+        >
+      {%- endif -%}
+    </div>
+  </div>
+
+  <div class="hero-banner__bg {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+    {%- if section.settings.bg_image != blank -%}
+      {%- assign hero_bg_alt = section.settings.bg_image.alt
+        | default: 'Fine Art Photography by Christian Nørgaard — Hero Background'
+        | escape
+      -%}
+      {{
+        section.settings.bg_image
+        | image_url: width: 2000
+        | image_tag:
+          preload: true,
+          loading: 'eager',
+          fetchpriority: 'high',
+          sizes: '100vw',
+          widths: '600, 900, 1200, 1600, 2000',
+          width: section.settings.bg_image.width,
+          height: section.settings.bg_image.height,
+          class: 'w-full h-full object-cover aspect-[16/9]',
+          alt: hero_bg_alt
+      }}
+    {%- endif -%}
+  </div>
+
+  {%- if section.settings.quote_text != blank -%}
+    <div class="hero-banner__text 1490:pt-15 pt-10 1490:pb-15 pb-10 xl:px-15 md:px-10 px-4 {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      <div class="content lg content-black max-w-[1100px] mr-auto [&_p]:font-medium max-767:[&_p]:text-base max-767:[&_p]:leading-5.5 max-[768px]:block">
+        {{ section.settings.quote_text }}
+      </div>
+      <div class="content lg content-black max-w-[1100px] mr-auto [&_p]:font-medium max-767:[&_p]:text-base max-767:[&_p]:leading-5.5 block">
+        {{ section.settings.quote_text_mobile }}
+      </div>
+    </div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Hero Banner",
+  "tag": "div",
+  "class": "hero-banner-wrapper",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow_text",
+      "label": "Eyebrow Text",
+      "default": "FINE ART BY"
+    },
+    {
+      "type": "image_picker",
+      "id": "heading_svg",
+      "label": "Heading SVG"
+    },
+    {
+      "type": "richtext",
+      "id": "quote_text",
+      "label": "Quote Text (below image) Desktop"
+    },
+    {
+      "type": "richtext",
+      "id": "quote_text_mobile",
+      "label": "Quote Text (below image) Mobile"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-4"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top (desktop)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom (desktop)",
+      "default": 52
+    },
+
+    {
+      "type": "header",
+      "content": "Mobile Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top (mobile)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom (mobile)",
+      "default": 52
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Banner"
+    }
+  ]
+}
+{% endschema %}

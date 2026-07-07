@@ -1,0 +1,222 @@
+/* Christian Nørgaard brand styles */
+
+:root {
+  --cn-display-size: clamp(3.2rem, 4.5vw, 7.2rem);
+}
+
+/* Accent word inside headings: enter the word in italic in the theme editor */
+h1 em,
+h2 em,
+h3 em,
+.h0 em,
+.h1 em,
+.h2 em,
+.h3 em {
+  font-style: normal;
+  color: rgb(var(--color-accent));
+}
+
+.cn-accent {
+  color: rgb(var(--color-accent));
+}
+
+/* Wordmark heading section */
+.cn-wordmark {
+  overflow: hidden;
+}
+
+.cn-wordmark__eyebrow {
+  margin: 0 0 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: clamp(1.2rem, 1.2vw, 1.8rem);
+}
+
+.cn-wordmark__title {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: clamp(2.6rem, 5.9vw, 11.4rem);
+  line-height: 1.05;
+  letter-spacing: 0.015em;
+  white-space: nowrap;
+}
+
+/* Featured showcase section (e.g. New Releases) */
+.cn-showcase__header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.cn-showcase__header .title {
+  margin: 0 0 1.6rem;
+}
+
+.cn-showcase__description {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.cn-showcase__media {
+  display: block;
+  width: 100%;
+}
+
+.cn-showcase__media img,
+.cn-showcase__media svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 5 / 2;
+  object-fit: cover;
+}
+
+.cn-showcase__footer {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.cn-showcase__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 1.3rem;
+  color: rgb(var(--color-accent));
+  text-decoration: none;
+}
+
+.cn-showcase__link:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+
+.cn-showcase__link .icon-arrow {
+  width: 1.5rem;
+}
+
+/* Testimonials section */
+.cn-testimonials__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.cn-testimonials__slider-wrapper {
+  position: relative;
+  padding: 0 8rem;
+}
+
+.cn-testimonials .slider {
+  scrollbar-width: none;
+}
+
+.cn-testimonials .slider::-webkit-scrollbar {
+  display: none;
+}
+
+.cn-testimonials__slide {
+  width: 100%;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+.cn-testimonials__quote-wrapper {
+  position: relative;
+  max-width: 80rem;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 3.4rem;
+}
+
+.cn-testimonials__quote-wrapper::before {
+  content: '\201C';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 9rem;
+  line-height: 1;
+  color: rgba(var(--color-accent), 0.35);
+  font-family: var(--font-heading-family);
+  pointer-events: none;
+}
+
+.cn-testimonials__quote {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.cn-testimonials__author {
+  margin-top: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 1.3rem;
+}
+
+.cn-testimonials__button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 1.3rem;
+  color: rgba(var(--color-foreground), 0.75);
+}
+
+.cn-testimonials__button:hover:not([disabled]) {
+  color: rgb(var(--color-accent));
+}
+
+.cn-testimonials__button[disabled] {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.cn-testimonials__button--prev {
+  left: 0;
+}
+
+.cn-testimonials__button--next {
+  right: 0;
+}
+
+@media screen and (max-width: 749px) {
+  .cn-testimonials__slider-wrapper {
+    padding: 0 0 5rem;
+  }
+
+  .cn-testimonials__button {
+    top: auto;
+    bottom: 0;
+    transform: none;
+  }
+}
+
+/* Image strip section */
+.cn-image-strip {
+  overflow: hidden;
+}
+
+.cn-image-strip__track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.cn-image-strip__item {
+  flex: 0 0 auto;
+  width: clamp(10rem, 10.5vw, 20rem);
+}
+
+.cn-image-strip__item img,
+.cn-image-strip__item svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}

@@ -1,75 +1,81 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "hero_banner_zEzAyz": {
+      "type": "hero-banner",
+      "name": "Hero Banner",
+      "settings": {
+        "bg_image": "shopify://shop_images/Group_2_hero_cn.webp",
+        "eyebrow_text": "FINE ART BY",
+        "heading_svg": "shopify://shop_images/Christian_Norgaard.webp",
+        "quote_text": "<p>Formed in silence. Shaped by time.<br/>For thousands of years, Greenland’s glaciers have released vast<br/>bodies of ice-carrying memory, weight, and stillness into the open sea.<br/>They drift like abstract compositions, tracing a quiet dialogue between<br/>presence and disappearance.</p>",
+        "quote_text_mobile": "",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 52
+      }
+    },
+    "image_with_text_4qGPpQ": {
+      "type": "image-with-text",
       "blocks": {
-        "heading": {
+        "heading_i4R4g8": {
           "type": "heading",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "heading": "Limited Edition",
+            "heading_size": "h1"
           }
         },
-        "button": {
-          "type": "buttons",
+        "text_yUHEdy": {
+          "type": "text",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "text": "<p>Marked by honor. Defined by courage.  In the highlands of Nagaland, headhunters once moved as guardians of tribe and tradition — their lives shaped by ritual, identity, and the silent laws of  the land.<br/>Each mark. Each ornament. Each gaze. A language of bravery, status, belonging.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_N64mTa": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/accessory",
+            "button_style_secondary": false
           }
         }
       },
       "block_order": [
-        "heading",
-        "button"
+        "heading_i4R4g8",
+        "text_yUHEdy",
+        "button_N64mTa"
       ],
+      "name": "t:sections.image-with-text.presets.name",
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
+        "image": "shopify://shop_images/17430_1_8b5173ef-90c7-4d7f-a8d9-0bf427b4aa05.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
         "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
-      }
-    },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "padding_top": 44,
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
         "padding_bottom": 36
       }
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection"
+    "hero_banner_zEzAyz",
+    "image_with_text_4qGPpQ"
   ]
 }
