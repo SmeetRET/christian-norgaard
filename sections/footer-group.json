@@ -57,6 +57,24 @@
             "image": "shopify://shop_images/Rectangle_437_5_1.avif"
           }
         },
+        "gallery_image_TzRxYb": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/1SikuWherestillnessformsAF1Y91612.webp"
+          }
+        },
+        "gallery_image_wy9aPM": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/1_Siku_Where_stillness_forms_AF1Y9161_3_1.jpg"
+          }
+        },
+        "gallery_image_DAmtAX": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/StraumarLifsins_Andi.jpg"
+          }
+        },
         "brand_information_8GNeK9": {
           "type": "brand_information",
           "settings": {
@@ -71,6 +89,9 @@
         "gallery_image_eiLTq7",
         "gallery_image_YWVQmb",
         "gallery_image_qBNX9f",
+        "gallery_image_TzRxYb",
+        "gallery_image_wy9aPM",
+        "gallery_image_DAmtAX",
         "brand_information_8GNeK9"
       ],
       "settings": {
