@@ -13,19 +13,83 @@
   "sections": {
     "footer": {
       "type": "footer",
+      "blocks": {
+        "image_x9rP6d": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_1816.webp",
+            "image_width": 100,
+            "alignment": "center"
+          }
+        },
+        "link_list_4mpQwK": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Quick links",
+            "menu": "unf-menu"
+          }
+        },
+        "contact_QppDVq": {
+          "type": "contact",
+          "settings": {
+            "heading": "Contact Us",
+            "call_label": "Call Us",
+            "call_number": "000-123-456789",
+            "email_label": "Email",
+            "email_address": "loremipsum@gmail.com"
+          }
+        },
+        "gallery_image_eiLTq7": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/1_The_Warrior_Within_DSCF6999_1.webp"
+          }
+        },
+        "gallery_image_YWVQmb": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/17430_1_8b5173ef-90c7-4d7f-a8d9-0bf427b4aa05.webp"
+          }
+        },
+        "gallery_image_qBNX9f": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_437_5_1.avif"
+          }
+        },
+        "brand_information_8GNeK9": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        }
+      },
+      "block_order": [
+        "image_x9rP6d",
+        "link_list_4mpQwK",
+        "contact_QppDVq",
+        "gallery_image_eiLTq7",
+        "gallery_image_YWVQmb",
+        "gallery_image_qBNX9f",
+        "brand_information_8GNeK9"
+      ],
       "settings": {
-        "color_scheme": "scheme-1",
-        "newsletter_enable": true,
+        "color_scheme": "scheme-4",
+        "newsletter_enable": false,
         "newsletter_heading": "Subscribe to our emails",
-        "enable_follow_on_shop": true,
-        "show_social": true,
-        "enable_country_selector": true,
-        "enable_language_selector": true,
-        "payment_enable": true,
-        "show_policy": true,
+        "enable_follow_on_shop": false,
+        "show_social": false,
+        "show_social_bottom": true,
+        "policy_menu": "policy-menu",
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": false,
+        "show_policy": false,
         "margin_top": 0,
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 36,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
       }
     }
   },

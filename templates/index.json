@@ -20,62 +20,193 @@
         "quote_text_mobile": "",
         "color_scheme": "scheme-1",
         "padding_top": 40,
-        "padding_bottom": 52,
+        "padding_bottom": 40,
         "padding_top_mobile": 40,
-        "padding_bottom_mobile": 52
+        "padding_bottom_mobile": 40
       }
     },
-    "image_with_text_4qGPpQ": {
-      "type": "image-with-text",
+    "new_releases_HLfWEH": {
+      "type": "new-releases",
+      "name": "New Releases",
+      "settings": {
+        "color_scheme": "scheme-2",
+        "heading_highlight": "New",
+        "heading": "Releases",
+        "subheading": "Decorate your home with beautiful and impressive limited edition artwork prints that are expertly produced to transform the look of any room.",
+        "series_image": "shopify://shop_images/7_Siku_Qerattooq_Where_time_is_frozen_AF1Y9482_2.webp",
+        "button_label": "View All",
+        "button_url": "shopify://collections/accessory",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "homepage_collections_6bhzHk": {
+      "type": "homepage-collections",
       "blocks": {
-        "heading_i4R4g8": {
-          "type": "heading",
+        "collection_item_n6amwY": {
+          "type": "collection_item",
           "settings": {
-            "heading": "Limited Edition",
-            "heading_size": "h1"
+            "collection": "on-ice"
           }
         },
-        "text_yUHEdy": {
-          "type": "text",
+        "collection_item_hwTjRG": {
+          "type": "collection_item",
           "settings": {
-            "text": "<p>Marked by honor. Defined by courage.  In the highlands of Nagaland, headhunters once moved as guardians of tribe and tradition — their lives shaped by ritual, identity, and the silent laws of  the land.<br/>Each mark. Each ornament. Each gaze. A language of bravery, status, belonging.</p>",
-            "text_style": "body"
+            "collection": "river"
           }
         },
-        "button_N64mTa": {
-          "type": "button",
+        "collection_item_rhaWJf": {
+          "type": "collection_item",
           "settings": {
-            "button_label": "Shop Now",
-            "button_link": "shopify://collections/accessory",
-            "button_style_secondary": false
+            "collection": "nagaland"
           }
         }
       },
       "block_order": [
-        "heading_i4R4g8",
-        "text_yUHEdy",
-        "button_N64mTa"
+        "collection_item_n6amwY",
+        "collection_item_hwTjRG",
+        "collection_item_rhaWJf"
       ],
-      "name": "t:sections.image-with-text.presets.name",
+      "name": "Collections",
       "settings": {
-        "image": "shopify://shop_images/17430_1_8b5173ef-90c7-4d7f-a8d9-0bf427b4aa05.webp",
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "image_behavior": "none",
-        "content_layout": "no-overlap",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "mobile_content_alignment": "left",
-        "section_color_scheme": "",
+        "heading": "Collections",
+        "layout_type": "grid",
+        "desktop_columns": 3,
+        "card_gap": 10,
         "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "limited_editions_NRjKmL": {
+      "type": "limited-editions",
+      "name": "Limited Editions",
+      "settings": {
+        "color_scheme": "scheme-2",
+        "main_image": "shopify://shop_images/17430_1_8b5173ef-90c7-4d7f-a8d9-0bf427b4aa05.webp",
+        "heading_highlight": "Limited",
+        "heading": "Editions",
+        "frame_image": "shopify://shop_images/1_The_Warrior_Within_DSCF6999_1.webp",
+        "description": "<p>Marked by honor. Defined by courage.  In the highlands of Nagaland, headhunters once moved as guardians of tribe and tradition — their lives shaped by ritual, identity, and the silent laws of <br> the land.</p><p>Each mark. Each ornament. Each gaze. <br>\nA language of bravery, status, belonging.</p>",
+        "button_label": "Shop Now",
+        "button_url": "shopify://collections/men-s",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "bestsellers_bMJULq": {
+      "type": "bestsellers",
+      "name": "Bestsellers",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "heading_highlight": "",
+        "heading": "Bestsellers",
+        "subheading": "Christian's newest best-selling artwork prints. Transform your spaces with unique moments photographed from all corners of the planet.",
+        "collection": "bestsellers",
+        "products_limit": 8,
+        "button_label": "View All",
+        "button_url": "shopify://collections/bestsellers",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "open_editions_3kctb4": {
+      "type": "open-editions",
+      "name": "Open Editions",
+      "settings": {
+        "color_scheme": "scheme-4",
+        "bg_image": "shopify://shop_images/Background.webp",
+        "heading_highlight": "Open",
+        "heading": "Editions",
+        "description": "Enjoy breathtaking artwork from the Open Editions fine artwork prints collection. Let powerful photography make a statement in your private home or business office.",
+        "button_label": "Shop Now",
+        "button_url": "shopify://collections/men-s",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 52
+      }
+    },
+    "testimonial_GMFqft": {
+      "type": "testimonial",
+      "name": "CTM Testimonial",
+      "settings": {
+        "color_scheme": "scheme-2",
+        "image": "shopify://shop_images/Rectangle_438.webp",
+        "bio": "Christian Nørgaard is a high-end photographic artist whose work balances technical precision with a refined visual sensitivity. His images explore the very nature of photography — its limits, its language, and the essence of what defines an image. Rooted in a documentary approach, his practice is elevated through a careful reduction of elements and a strong poetic narrative, resulting in work that is both restrained and deeply evocative.",
+        "signature_image": "shopify://shop_images/Signaturen_Nor_med_blaekstaenk_1.avif",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "reviews_EHWWYj": {
+      "type": "reviews",
+      "blocks": {
+        "testimonial_KVawRM": {
+          "type": "testimonial",
+          "settings": {
+            "quote_text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+          }
+        },
+        "testimonial_H3mMyz": {
+          "type": "testimonial",
+          "settings": {
+            "quote_text": "An absolutely outstanding experience from start to finish. The team was professional, responsive, and delivered beyond our expectations."
+          }
+        },
+        "testimonial_RkzDwc": {
+          "type": "testimonial",
+          "settings": {
+            "quote_text": "I cannot recommend this service highly enough. It completely transformed how we handle our workflows and saved us dozens of hours each week."
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_KVawRM",
+        "testimonial_H3mMyz",
+        "testimonial_RkzDwc"
+      ],
+      "name": "Testimonials Slider",
+      "settings": {
+        "heading": "Client’s",
+        "heading_highlight": "Love",
+        "color_scheme": "scheme-1",
+        "quote_icon": "shopify://shop_images/icon-quote.avif",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "newsletter_GWcNKE": {
+      "type": "newsletter",
+      "name": "Newsletter",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "heading": "Newsletter",
+        "disclaimer_text": "Subscribe for occasional updates: availability changes, project wrap-ups, and a couple of timely notes. Light cadence, no spam."
       }
     }
   },
   "order": [
     "hero_banner_zEzAyz",
-    "image_with_text_4qGPpQ"
+    "new_releases_HLfWEH",
+    "homepage_collections_6bhzHk",
+    "limited_editions_NRjKmL",
+    "bestsellers_bMJULq",
+    "open_editions_3kctb4",
+    "testimonial_GMFqft",
+    "reviews_EHWWYj",
+    "newsletter_GWcNKE"
   ]
 }

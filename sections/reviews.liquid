@@ -1,0 +1,241 @@
+{%- liquid
+  assign section_id = 'testimonials-' | append: section.id
+  assign heading = section.settings.heading
+  assign heading_hl = section.settings.heading_highlight
+-%}
+
+{% style %}
+  .section-id-{{ section.id }} {
+    background-color: {{ section.settings.background_color }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+  .section-id-{{ section.id }} .testimonials__nav.swiper-button-disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+  @media screen and (max-width: 1199px) {
+    .section-id-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_mobile }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+  }
+{% endstyle %}
+
+<section
+  id="{{ section_id }}"
+  class="testimonials-section page-width relative overflow-hidden section-id-{{ section.id }} color-{{ section.settings.color_scheme }}"
+  aria-label="{% if heading != blank %}{{ heading }}{% endif %}{% if heading_hl != blank %} {{ heading_hl }}{% endif %}"
+>
+  <div class="testimonials__wrapper relative 2xl:max-w-[1440px] max-w-[1200px] mx-auto">
+    {%- if heading != blank or heading_hl != blank -%}
+      <div class="title-black {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        <h2 class="testimonials__heading text-center">
+          {{- heading -}}
+          {%- if heading_hl != blank -%}
+            <span class="new-releases__title-orange"> {{ heading_hl }}</span>
+          {%- endif -%}
+        </h2>
+      </div>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      {%- if section.settings.quote_icon != blank -%}
+        <div class="max-w-[800px] mx-auto relative">
+          <div
+            class="testimonials__quote-icon absolute min-1439:max-1490:left-[80px] min-1439:max-1490:top-[70px] -left-[30px] w-[82px] h-[66px] max-989:w-[60px] max-989:h-[60px] max-425:left-[30px] max-425:top-[50px] pointer-events-none z-0 opacity-10! top-[75px] -translate-1/2 {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            aria-hidden="true"
+          >
+            <img
+              src="{{ section.settings.quote_icon | image_url: width: 164 }}"
+              width="82"
+              height="66"
+              alt="{{ section.settings.quote_icon.alt }}"
+              loading="lazy"
+              class="block w-full h-full object-contain"
+            >
+          </div>
+        </div>
+      {%- endif -%}
+      <div
+        class="swiper testimonials-swiper-{{ section.id }} overflow-hidden mt-10 max-769:mt-6 {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        aria-roledescription="carousel"
+        aria-label="Testimonials slider"
+      >
+        <div class="swiper-wrapper items-center max-w-800 py-6 xl:py-11">
+          {%- for block in section.blocks -%}
+            <div
+              class="swiper-slide w-full h-auto flex items-center justify-center"
+              role="group"
+              aria-roledescription="slide"
+              aria-label="{{ forloop.index }} of {{ section.blocks.size }}"
+              {{ block.shopify_attributes }}
+            >
+              <article class="testimonials__card relative text-center 2xl:max-w-[800px] mx-auto max-w-[600px] z-10 max-769:text-center max-769:max-w-[520px] ">
+                {%- if block.settings.quote_text != blank -%}
+                  <div class="content lg content-light content-black">
+                    <p class="testimonials__quote-text m-0">
+                      {{ block.settings.quote_text }}
+                    </p>
+                  </div>
+                {%- endif -%}
+              </article>
+            </div>
+          {%- endfor -%}
+        </div>
+        <div
+          class="testimonials__nav-row absolute top-1/2 -translate-y-1/2 left-0 right-0 flex justify-between items-center z-10 pointer-events-none max-769:static max-769:translate-y-0 max-769:justify-center max-769:gap-[40px] max-769:mt-6"
+          aria-hidden="true"
+        >
+          <button
+            type="button"
+            class="testimonials__nav testimonials__nav--prev testimonials-prev-{{ section.id }} pointer-events-auto text-[22px] max-989:text-[18px] text-black uppercase font-normal bg-transparent border-0 cursor-pointer"
+            aria-label="Previous slide"
+          >
+            PREV
+          </button>
+          <button
+            type="button"
+            class="testimonials__nav testimonials__nav--next testimonials-next-{{ section.id }} pointer-events-auto text-[22px] max-989:text-[18px] text-black uppercase font-normal bg-transparent border-0 cursor-pointer font-light"
+            aria-label="Next slide"
+          >
+            NEXT
+          </button>
+        </div>
+      </div>
+
+    {%- else -%}
+      {%- if request.design_mode -%}
+        <div class="testimonials__empty-state">Add testimonial blocks in the sidebar to get started.</div>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+</section>
+
+<script>
+  (function () {
+    function initTestimonialsSwiper() {
+      var el = document.querySelector('.testimonials-swiper-{{ section.id }}');
+      if (!el) return;
+
+      if (!window.Swiper) return;
+
+      if (el.swiper) {
+        el.swiper.destroy(true, true);
+      }
+
+      new Swiper(el, {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        centeredSlides: false,
+        loop: true,
+        navigation: {
+          nextEl: el.querySelector('.testimonials__nav--next'),
+          prevEl: el.querySelector('.testimonials__nav--prev'),
+        },
+      });
+    }
+    window.addEventListener('load', initTestimonialsSwiper);
+    document.addEventListener('shopify:section:load', function (e) {
+      if (e.detail && e.detail.sectionId === '{{ section.id }}') initTestimonialsSwiper();
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Testimonials Slider",
+  "tag": "section",
+  "class": "testimonials-section-wrapper",
+  "disabled_on": { "groups": ["header", "footer"] },
+  "settings": [
+    { "type": "header", "content": "Heading" },
+    { "type": "text", "id": "heading", "label": "Section Heading" },
+    { "type": "text", "id": "heading_highlight", "label": "Heading Highlight (orange)", "default": "Love" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "t:sections.all.colors.label", "default": "scheme-4" },
+    { "type": "image_picker", "id": "quote_icon", "label": "Quote Icon (optional)" },
+    { "type": "header", "content": "Desktop Padding" },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top (desktop)",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom (desktop)",
+      "default": 64
+    },
+    { "type": "header", "content": "Mobile Padding" },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top (mobile)",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom (mobile)",
+      "default": 64
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "limit": 12,
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote_text",
+          "label": "Quote Text",
+          "default": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials Slider",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote_text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote_text": "An absolutely outstanding experience from start to finish. The team was professional, responsive, and delivered beyond our expectations."
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote_text": "I cannot recommend this service highly enough. It completely transformed how we handle our workflows and saved us dozens of hours each week."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
